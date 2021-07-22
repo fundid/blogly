@@ -1,0 +1,3466 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en"><!--<![endif]-->
+  <head>
+    <!-- Basic Page Needs
+================================================== -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+
+<!-- Mobile Specific Metas
+================================================== -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Title and meta description
+================================================== -->
+  
+
+<title>Text input | U.S. Web Design System (USWDS)</title>
+<meta property="og:title" content="Text input | U.S. Web Design System (USWDS)">
+
+
+<meta name="description" content="A text input allows users to enter any combination of letters, numbers, or symbols. Text input boxes can span single or multiple lines.">
+<meta property="og:description" content="A text input allows users to enter any combination of letters, numbers, or symbols. Text input boxes can span single or multiple lines.">
+
+<meta name="twitter:card" value="summary">
+<meta name="twitter:site" content="@USWDS">
+<meta property="og:type" content="article">
+
+
+
+
+
+  
+  <meta property="og:image" content="https://designsystem.digital.gov/img/uswds-logo/lg-black.png">
+
+
+<link rel="canonical" href="../text-input.html">
+<meta property="og:url" content="https://designsystem.digital.gov/components/text-input/">
+
+
+
+<!-- Favicons
+================================================== -->
+  <!-- 128x128 -->
+  <link rel="shortcut icon" type="image/ico" href="assets/img/favicons/favicon.ico">
+  <link rel="icon" type="image/png" href="assets/img/favicons/favicon.png">
+
+  <!-- 192x192, as recommended for Android
+  http://updates.html5rocks.com/2014/11/Support-for-theme-color-in-Chrome-39-for-Android
+  -->
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicons/favicon-192.png">
+
+  <!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+  <link rel="apple-touch-icon-precomposed" href="assets/img/favicons/favicon-57.png">
+  <!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/img/favicons/favicon-72.png">
+  <!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/img/favicons/favicon-114.png">
+  <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/img/favicons/favicon-144.png">
+
+<!-- ANALYTICS
+================================================== -->
+
+	<!-- Google Analytics -->
+
+	<script>
+		window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+		ga('create', 'UA-48605964-43', 'gsa.gov');
+		ga('send', 'pageview');
+		// anonymize user IPs (chops off the last IP triplet)
+		ga('set', 'anonymizeIp', true);
+
+		// forces SSL even if the page were somehow loaded over http://
+		ga('set', 'forceSSL', true);
+
+		ga('send', 'pageview');
+	</script>
+	<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
+	<script async type="text/javascript" id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA&subagency=TTS"></script>
+
+
+<!-- CSS
+================================================== -->
+<!-- env: production -->
+
+
+  
+    <link rel="stylesheet" href="assets/css/uswds.css">
+  
+
+
+
+<!-- USWDS INIT
+================================================== -->
+<script src="assets/js/vendor/uswds-init.min.js"></script>
+<link rel="preload" href="assets/js/vendor/uswds.min.js" as="script">
+
+  </head>
+  <body class="page-text-input layout-component ">
+    <a class="usa-skipnav" href="../text-input.html#main-content">Skip to main content</a>
+<section class="usa-banner site-banner" aria-label="Official government website,,">
+  <div class="usa-accordion">
+    <header class="usa-banner__header">
+      <div class="usa-banner__inner">
+        <div class="grid-col-auto">
+          <img class="usa-banner__header-flag" src="assets/img/us_flag_small.png" alt="U.S. flag">
+        </div>
+        <div class="grid-col-fill tablet:grid-col-auto">
+          <p class="usa-banner__header-text">An official website of the United States government</p>
+          <p class="usa-banner__header-action" aria-hidden="true">Here’s how you know</p>
+        </div>
+        <button class="usa-accordion__button usa-banner__button"
+          aria-expanded="false" aria-controls="gov-banner">
+          <span class="usa-banner__button-text">Here’s how you know</span>
+        </button>
+      </div>
+    </header>
+    <div class="usa-banner__content usa-accordion__content" id="gov-banner">
+      <div class="grid-row grid-gap-lg">
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img" src="assets/img/icon-dot-gov.svg" role="img" alt="" aria-hidden="true">
+          <div class="usa-media-block__body">
+            <p>
+              <strong>Official websites use .gov</strong>
+              <br>
+              A <strong>.gov</strong> website belongs to an official government organization in the United States.
+            </p>
+          </div>
+        </div>
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img" src="assets/img/icon-https.svg" role="img" alt="" aria-hidden="true">
+          <div class="usa-media-block__body">
+            <p>
+              <strong>Secure .gov websites use HTTPS</strong>
+              <br>
+              A <strong>lock</strong> ( <span class="icon-lock"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="64" viewBox="0 0 52 64" class="usa-banner__lock-image" role="img" aria-labelledby="banner-lock-title banner-lock-description" focusable="false"><title id="banner-lock-title">Lock</title><desc id="banner-lock-description">A locked padlock</desc><path fill="#000000" fill-rule="evenodd" d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z"/></svg></span> ) or <strong>https://</strong> means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites.
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<header class="usa-header site-header site-header-dark" role="banner">
+  <div class="usa-navbar site-header-navbar">
+    <div class="usa-logo site-logo" id="logo">
+      <em class="usa-logo__text">
+        <a class="margin-right-05" href="../v2.designsystem.digital.gov/index.html" title="Home" aria-label="U.S. Web Design System (USWDS) home">
+          <span aria-hidden="true" class="site-title-short">USWDS</span>
+          <span class="site-title">U.S. Web Design System (USWDS)</span>
+        </a>
+      </em>
+    </div>
+    <button class="usa-menu-btn">Menu</button>
+    <div class="navbar--container">
+      <form
+        id="search_form"
+        class="navbar__search usa-search usa-search--small desktop:margin-right-2 display-none desktop:display-inline-block float-none text-middle"
+        action="https://search.usa.gov/search"
+        accept-charset="UTF-8"
+        method="get">
+        <input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="affiliate" id="affiliate" value="uswds" />
+        <div role="search">
+          <label class="usa-sr-only" for="query">Search</label>
+          <input
+            id="query"
+            class="usa-input usagov-search-autocomplete"
+            name="query"
+            type="search"
+            autocomplete="off"/>
+          <button
+            class="usa-button"
+            type="submit"
+            name="commit">
+            <span class="usa-sr-only">Search</span>
+          </button>
+        </div>
+      </form>
+      <div class="buttons">
+  <a
+    class="usa-button site-button-outline-secondary site-button-standards margin-x-0 desktop:margin-right-1 padding-x-05 desktop:padding-left-1 desktop:padding-right-05 desktop-lg:padding-left-205 desktop-lg:padding-right-2 font-lang-sm"
+    href="website-standards/index.html"
+    onclick="ga('send', 'event', 'Read website standards', 'Clicked Read website standards from inside site');"
+  >
+    Read website standards
+  </a>
+  <a
+    class="usa-button site-button-outline-secondary site-button-download margin-x-0 desktop:margin-right-1 desktop:padding-left-1 desktop:padding-right-05 desktop-lg:padding-left-205 desktop-lg:padding-right-2 font-lang-sm"
+    href="../v2.designsystem.digital.gov/download/index.html"
+    onclick="ga('send', 'event', 'Downloaded code and design files', 'Clicked Download code and design files from inside site');"
+  >
+    Download <span class="version desktop:display-none desktop-lg:display-inline">v2.11.2</span>
+  </a>
+  <a
+    class="usa-button site-button-github margin-x-0 desktop:margin-right-4 font-lang-sm"
+    href="https://github.com/uswds/uswds"
+    onclick="ga('send', 'event', 'Viewed on Github', 'Clicked View on Github from inside site');"
+  >
+    <?xml version="1.0" encoding="UTF-8"?><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="33"
+  height="32"
+  viewBox="0 0 33 32"
+  class="logo"
+>
+  <title>Github logo</title>
+  <path
+    fill="#161514"
+    fill-rule="evenodd"
+    d="M16.288 0C7.294 0 0 7.293 0 16.29c0 7.197 4.667 13.302 11.14 15.456.815.15 1.112-.353 1.112-.785 0-.386-.014-1.411-.022-2.77-4.531.984-5.487-2.184-5.487-2.184-.741-1.882-1.809-2.383-1.809-2.383-1.479-1.01.112-.99.112-.99 1.635.115 2.495 1.679 2.495 1.679 1.453 2.489 3.813 1.77 4.741 1.353.148-1.052.569-1.77 1.034-2.177-3.617-.411-7.42-1.809-7.42-8.051 0-1.778.635-3.233 1.677-4.371-.168-.412-.727-2.069.16-4.311 0 0 1.367-.438 4.479 1.67a15.602 15.602 0 0 1 4.078-.549 15.62 15.62 0 0 1 4.078.549c3.11-2.108 4.475-1.67 4.475-1.67.889 2.242.33 3.899.163 4.311 1.044 1.138 1.674 2.593 1.674 4.371 0 6.258-3.809 7.635-7.437 8.038.584.503 1.105 1.497 1.105 3.017 0 2.177-.02 3.934-.02 4.468 0 .436.294.943 1.12.784 6.468-2.159 11.131-8.26 11.131-15.455C32.579 7.293 25.285 0 16.288 0"
+  />
+</svg>
+
+    <span class="text">View on GitHub</span>
+  </a>
+</div>
+
+
+    </div>
+  </div>
+</header>
+<nav class="site-nav-secondary sticky">
+  <ul>
+    
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="how-to-use-uswds/index.html">
+  <span>
+    How to use USWDS
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="design-principles.html">
+  <span>
+    Design principles
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item is-current">
+    
+
+<a href="../components.designsystem.digital.gov/components/detail/buttons.html"class="usa-current">
+  <span>
+    Components
+  </span>
+</a>
+
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="design-tokens.html">
+  <span>
+    Design tokens
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../v2.designsystem.digital.gov/utilities/index.html">
+  <span>
+    Utilities
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="templates/index.html">
+  <span>
+    Templates
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../v2.designsystem.digital.gov/about/index.html">
+  <span>
+    About
+  </span>
+</a>
+
+
+    
+  </li>
+
+
+  </ul>
+</nav>
+<div class="usa-overlay"></div>
+
+<nav role="navigation" class="usa-nav site-nav sidenav-mobile">
+  <button class="usa-nav__close">
+    <span class="usa-sr-only">Close</span>
+  </button>
+
+  <form
+    id="search_form-mobile"
+    class="usa-search usa-search--small desktop:margin-right-4"
+    action="https://search.usa.gov/search"
+    accept-charset="UTF-8"
+    method="get">
+    <input name="utf8" type="hidden" value="&#x2713;" />
+    <input type="hidden" name="affiliate" id="affiliate-mobile" value="uswds" />
+    <div role="search">
+      <label class="usa-sr-only" for="query-mobile">Search</label>
+      <input
+        id="query-mobile"
+        class="usa-input usagov-search-autocomplete"
+        name="query"
+        type="search"
+        autocomplete="off"/>
+      <button
+        class="usa-button margin-top-0"
+        type="submit"
+        name="commit">
+        <span class="usa-sr-only">Search</span>
+      </button>
+    </div>
+  </form>
+  <div class="usa-nav__inner">
+    <ul class="usa-nav__primary usa-accordion">
+      
+  <li class="usa-nav__primary-item">
+  
+  
+    
+
+<button class="usa-accordion__button usa-nav__link" aria-controls="nav-how-to-use-uswds"
+  aria-expanded="false"
+  >
+  How to use USWDS
+</button>
+<ul id="nav-how-to-use-uswds" class="usa-nav__submenu">
+  
+  
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="how-to-use-uswds/index.html">
+  <span>
+    How to use USWDS
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="website-standards/index.html">
+  <span>
+    Website standards
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="maturity-model.html">
+  <span>
+    USWDS maturity model
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="documentation/fundamentals/index.html">
+  <span>
+    USWDS fundamentals and quickstart guide
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../v2.designsystem.digital.gov/documentation/developers/index.html">
+  <span>
+    For developers
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../v2.designsystem.digital.gov/documentation/designers/index.html">
+  <span>
+    For designers
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../v2.designsystem.digital.gov/documentation/accessibility/index.html">
+  <span>
+    Accessibility
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="documentation/settings.html">
+  <span>
+    Settings
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../v2.designsystem.digital.gov/performance/index.html">
+  <span>
+    Performance guidelines
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../v2.designsystem.digital.gov/documentation/code-guidelines/index.html">
+  <span>
+    Code guidelines
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../v2.designsystem.digital.gov/documentation/migration/index.html">
+  <span>
+    Migrating to USWDS 2
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../v2.designsystem.digital.gov/documentation/video-tutorials/index.html">
+  <span>
+    Video tutorials
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../v2.designsystem.digital.gov/documentation/implementations/index.html">
+  <span>
+    Implementations
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../v2.designsystem.digital.gov/documentation/showcase/index.html">
+  <span>
+    Showcase
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="documentation/sample-contract-language/index.html">
+  <span>
+    Sample contract language for 21st Century IDEA
+  </span>
+</a>
+
+
+    
+  </li>
+
+
+</ul>
+
+  
+  </li>
+
+  <li class="usa-nav__primary-item">
+  
+  
+    
+
+<a href="design-principles.html">
+  <span>
+    Design principles
+  </span>
+</a>
+
+
+  
+  </li>
+
+  <li class="usa-nav__primary-item">
+  
+  
+    
+
+<button class="usa-accordion__button usa-nav__link" aria-controls="nav-components"
+  
+  class="usa-current"
+  aria-expanded="true"
+  >
+  Components
+</button>
+<ul id="nav-components" class="usa-nav__submenu">
+  
+  
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../components.designsystem.digital.gov/components/detail/buttons.html">
+  <span>
+    Components
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../accordion/index.html">
+  <span>
+    Accordion
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../alert.html">
+  <span>
+    Alert
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../banner.html">
+  <span>
+    Banner
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../breadcrumb/index.html">
+  <span>
+    Breadcrumb
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../button.html">
+  <span>
+    Button
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../button-group.html">
+  <span>
+    Button group
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../card.html">
+  <span>
+    Card
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../character-count/index.html">
+  <span>
+    Character count
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../checkbox.html">
+  <span>
+    Checkbox
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../collection/index.html">
+  <span>
+    Collection
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../combo-box/index.html">
+  <span>
+    Combo box
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../data-visualizations/index.html">
+  <span>
+    Data visualizations
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../date-input.html">
+  <span>
+    Date input
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../date-picker.html">
+  <span>
+    Date picker
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../date-range-picker/index.html">
+  <span>
+    Date range picker
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../dropdown.html">
+  <span>
+    Dropdown
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../file-input/index.html">
+  <span>
+    File input
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../footer.html">
+  <span>
+    Footer
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../form.html">
+  <span>
+    Form
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../v2.designsystem.digital.gov/utilities/layout-grid/index.html">
+  <span>
+    Grid
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../header.html">
+  <span>
+    Header
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../icon.html">
+  <span>
+    Icon
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../icon-list/index.html">
+  <span>
+    Icon list
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../identifier.html">
+  <span>
+    Identifier
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../input-prefix-suffix/index.html">
+  <span>
+    Input prefix or suffix
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../link.html">
+  <span>
+    Link
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../list.html">
+  <span>
+    List
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../modal/index.html">
+  <span>
+    Modal
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../process-list.html">
+  <span>
+    Process list
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../prose/index.html">
+  <span>
+    Prose
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../radio-buttons.html">
+  <span>
+    Radio buttons
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../range-slider/index.html">
+  <span>
+    Range slider
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../search.html">
+  <span>
+    Search
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../side-navigation.html">
+  <span>
+    Side navigation
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../site-alert.html">
+  <span>
+    Site alert
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../step-indicator.html">
+  <span>
+    Step indicator
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../summary-box.html">
+  <span>
+    Summary box
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../table.html">
+  <span>
+    Table
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../tag/index.html">
+  <span>
+    Tag
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item is-current">
+    
+
+<a href="../text-input.html"class="usa-current">
+  <span>
+    Text input
+  </span>
+</a>
+
+    
+    
+    
+    <ul class="usa-nav__submenu">
+  
+  <li class="usa-nav__submenu-item is-current">
+    
+
+
+<a href="../text-input.html#text-input-preview">Preview</a>
+
+    
+  </li>
+
+  
+  <li class="usa-nav__submenu-item is-current">
+    
+
+
+<a href="../text-input.html#text-input-code">Code</a>
+
+    
+  </li>
+
+  
+  <li class="usa-nav__submenu-item is-current">
+    
+
+
+<a href="../text-input.html#text-input-guidance">Guidance</a>
+
+    
+  </li>
+
+  
+  <li class="usa-nav__submenu-item is-current">
+    
+
+
+<a href="../text-input.html#text-input-package">Package</a>
+
+    
+  </li>
+
+</ul>
+    
+  
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../time-picker/index.html">
+  <span>
+    Time picker
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../tooltip/index.html">
+  <span>
+    Tooltip
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../v2.designsystem.digital.gov/components/typography/index.html">
+  <span>
+    Typography
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../validation.html">
+  <span>
+    Validation
+  </span>
+</a>
+
+
+    
+  </li>
+
+
+</ul>
+
+  
+  </li>
+
+  <li class="usa-nav__primary-item">
+  
+  
+    
+
+<button class="usa-accordion__button usa-nav__link" aria-controls="nav-design-tokens"
+  aria-expanded="false"
+  >
+  Design tokens
+</button>
+<ul id="nav-design-tokens" class="usa-nav__submenu">
+  
+  
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="design-tokens.html">
+  <span>
+    Design tokens
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="https://designsystem.digital.gov/design-tokens/color/">
+  <span>
+    Color
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="design-tokens/typesetting.html">
+  <span>
+    Typesetting
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="design-tokens/flex/index.html">
+  <span>
+    Flex
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="design-tokens/opacity/index.html">
+  <span>
+    Opacity
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="design-tokens/order/index.html">
+  <span>
+    Order
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="design-tokens/shadow/index.html">
+  <span>
+    Shadow
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="https://designsystem.digital.gov/design-tokens/spacing-units/">
+  <span>
+    Spacing units
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="design-tokens/z-index/index.html">
+  <span>
+    Z-index
+  </span>
+</a>
+
+
+    
+  </li>
+
+
+</ul>
+
+  
+  </li>
+
+  <li class="usa-nav__primary-item">
+  
+  
+    
+
+<button class="usa-accordion__button usa-nav__link" aria-controls="nav-utilities"
+  aria-expanded="false"
+  >
+  Utilities
+</button>
+<ul id="nav-utilities" class="usa-nav__submenu">
+  
+  
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../v2.designsystem.digital.gov/utilities/index.html">
+  <span>
+    Utilities
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../v2.designsystem.digital.gov/utilities/layout-grid/index.html">
+  <span>
+    Layout grid
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="utilities/color.html">
+  <span>
+    Color
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="utilities/height-and-width/index.html">
+  <span>
+    Height and width
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="utilities/margin-and-padding/index.html">
+  <span>
+    Margin and padding
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="utilities/border/index.html">
+  <span>
+    Border
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="utilities/outline/index.html">
+  <span>
+    Outline
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="utilities/font-size-and-family.html">
+  <span>
+    Font size and family
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="utilities/text-styles/index.html">
+  <span>
+    Text styles
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="utilities/paragraph-styles/index.html">
+  <span>
+    Paragraph styles
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="utilities/display/index.html">
+  <span>
+    Display
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="utilities/flex/index.html">
+  <span>
+    Flex
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="utilities/shadow/index.html">
+  <span>
+    Shadow
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="utilities/float/index.html">
+  <span>
+    Float
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="utilities/clearfix/index.html">
+  <span>
+    Clearfix
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="utilities/list-reset/index.html">
+  <span>
+    List reset
+  </span>
+</a>
+
+
+    
+  </li>
+
+
+</ul>
+
+  
+  </li>
+
+  <li class="usa-nav__primary-item">
+  
+  
+    
+
+<button class="usa-accordion__button usa-nav__link" aria-controls="nav-templates"
+  aria-expanded="false"
+  >
+  Templates
+</button>
+<ul id="nav-templates" class="usa-nav__submenu">
+  
+  
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="templates/index.html">
+  <span>
+    Templates
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="templates/404-page/index.html">
+  <span>
+    404 page
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="templates/documentation-page/index.html">
+  <span>
+    Documentation page
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="templates/landing-page/index.html">
+  <span>
+    Landing page
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="templates/authentication-pages/index.html">
+  <span>
+    Authentication pages
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="templates/form-templates/index.html">
+  <span>
+    Form templates
+  </span>
+</a>
+
+
+    
+  </li>
+
+
+</ul>
+
+  
+  </li>
+
+  <li class="usa-nav__primary-item">
+  
+  
+    
+
+<button class="usa-accordion__button usa-nav__link" aria-controls="nav-about"
+  aria-expanded="false"
+  >
+  About
+</button>
+<ul id="nav-about" class="usa-nav__submenu">
+  
+  
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../v2.designsystem.digital.gov/about/index.html">
+  <span>
+    About
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="about/key-benefits/index.html">
+  <span>
+    Key benefits
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="about/product-values/index.html">
+  <span>
+    Product values
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="about/community.html">
+  <span>
+    Community
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../v2.designsystem.digital.gov/about/whats-new/index.html">
+  <span>
+    What’s new
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../v2.designsystem.digital.gov/about/releases/index.html">
+  <span>
+    Release notes
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../v2.designsystem.digital.gov/about/updates/index.html">
+  <span>
+    News and updates
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../v2.designsystem.digital.gov/about/product-roadmap/index.html">
+  <span>
+    Product roadmap
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="../v2.designsystem.digital.gov/about/research/index.html">
+  <span>
+    Research
+  </span>
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-nav__submenu-item">
+    
+
+<a href="about/security/index.html">
+  <span>
+    Security
+  </span>
+</a>
+
+
+    
+  </li>
+
+
+</ul>
+
+  
+  </li>
+
+
+    </ul>
+    <div class="buttons">
+  <a
+    class="usa-button site-button-outline-secondary site-button-standards margin-x-0 desktop:margin-right-1 padding-x-05 desktop:padding-left-1 desktop:padding-right-05 desktop-lg:padding-left-205 desktop-lg:padding-right-2 font-lang-sm"
+    href="website-standards/index.html"
+    onclick="ga('send', 'event', 'Read website standards', 'Clicked Read website standards from inside site');"
+  >
+    Read website standards
+  </a>
+  <a
+    class="usa-button site-button-outline-secondary site-button-download margin-x-0 desktop:margin-right-1 desktop:padding-left-1 desktop:padding-right-05 desktop-lg:padding-left-205 desktop-lg:padding-right-2 font-lang-sm"
+    href="../v2.designsystem.digital.gov/download/index.html"
+    onclick="ga('send', 'event', 'Downloaded code and design files', 'Clicked Download code and design files from inside site');"
+  >
+    Download <span class="version desktop:display-none desktop-lg:display-inline">v2.11.2</span>
+  </a>
+  <a
+    class="usa-button site-button-github margin-x-0 desktop:margin-right-4 font-lang-sm"
+    href="https://github.com/uswds/uswds"
+    onclick="ga('send', 'event', 'Viewed on Github', 'Clicked View on Github from inside site');"
+  >
+    <?xml version="1.0" encoding="UTF-8"?><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="33"
+  height="32"
+  viewBox="0 0 33 32"
+  class="logo"
+>
+  <title>Github logo</title>
+  <path
+    fill="#161514"
+    fill-rule="evenodd"
+    d="M16.288 0C7.294 0 0 7.293 0 16.29c0 7.197 4.667 13.302 11.14 15.456.815.15 1.112-.353 1.112-.785 0-.386-.014-1.411-.022-2.77-4.531.984-5.487-2.184-5.487-2.184-.741-1.882-1.809-2.383-1.809-2.383-1.479-1.01.112-.99.112-.99 1.635.115 2.495 1.679 2.495 1.679 1.453 2.489 3.813 1.77 4.741 1.353.148-1.052.569-1.77 1.034-2.177-3.617-.411-7.42-1.809-7.42-8.051 0-1.778.635-3.233 1.677-4.371-.168-.412-.727-2.069.16-4.311 0 0 1.367-.438 4.479 1.67a15.602 15.602 0 0 1 4.078-.549 15.62 15.62 0 0 1 4.078.549c3.11-2.108 4.475-1.67 4.475-1.67.889 2.242.33 3.899.163 4.311 1.044 1.138 1.674 2.593 1.674 4.371 0 6.258-3.809 7.635-7.437 8.038.584.503 1.105 1.497 1.105 3.017 0 2.177-.02 3.934-.02 4.468 0 .436.294.943 1.12.784 6.468-2.159 11.131-8.26 11.131-15.455C32.579 7.293 25.285 0 16.288 0"
+  />
+</svg>
+
+    <span class="text">View on GitHub</span>
+  </a>
+</div>
+
+
+  </div>
+</nav>
+
+
+<div class="default-container">
+  <aside class="sidenav" id="page-side-navigation">
+    
+    
+    <ul class="site-sidenav usa-sidenav">
+      
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../components.designsystem.digital.gov/components/detail/buttons.html">
+  
+    Components
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../accordion/index.html">
+  
+    Accordion
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../alert.html">
+  
+    Alert
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../banner.html">
+  
+    Banner
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../breadcrumb/index.html">
+  
+    Breadcrumb
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../button.html">
+  
+    Button
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../button-group.html">
+  
+    Button group
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../card.html">
+  
+    Card
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../character-count/index.html">
+  
+    Character count
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../checkbox.html">
+  
+    Checkbox
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../collection/index.html">
+  
+    Collection
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../combo-box/index.html">
+  
+    Combo box
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../data-visualizations/index.html">
+  
+    Data visualizations
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../date-input.html">
+  
+    Date input
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../date-picker.html">
+  
+    Date picker
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../date-range-picker/index.html">
+  
+    Date range picker
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../dropdown.html">
+  
+    Dropdown
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../file-input/index.html">
+  
+    File input
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../footer.html">
+  
+    Footer
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../form.html">
+  
+    Form
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../v2.designsystem.digital.gov/utilities/layout-grid/index.html">
+  
+    Grid
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../header.html">
+  
+    Header
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../icon.html">
+  
+    Icon
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../icon-list/index.html">
+  
+    Icon list
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../identifier.html">
+  
+    Identifier
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../input-prefix-suffix/index.html">
+  
+    Input prefix or suffix
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../link.html">
+  
+    Link
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../list.html">
+  
+    List
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../modal/index.html">
+  
+    Modal
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../process-list.html">
+  
+    Process list
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../prose/index.html">
+  
+    Prose
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../radio-buttons.html">
+  
+    Radio buttons
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../range-slider/index.html">
+  
+    Range slider
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../search.html">
+  
+    Search
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../side-navigation.html">
+  
+    Side navigation
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../site-alert.html">
+  
+    Site alert
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../step-indicator.html">
+  
+    Step indicator
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../summary-box.html">
+  
+    Summary box
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../table.html">
+  
+    Table
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../tag/index.html">
+  
+    Tag
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item is-current">
+    
+
+<a href="../text-input.html"class="usa-current">
+  
+    Text input
+  
+</a>
+
+    
+    
+    
+    <ul class="usa-sidenav__sublist">
+  
+  <li class="usa-sidenav__item is-current">
+    
+
+
+<a href="../text-input.html#text-input-preview">Preview</a>
+
+    
+  </li>
+
+  
+  <li class="usa-sidenav__item is-current">
+    
+
+
+<a href="../text-input.html#text-input-code">Code</a>
+
+    
+  </li>
+
+  
+  <li class="usa-sidenav__item is-current">
+    
+
+
+<a href="../text-input.html#text-input-guidance">Guidance</a>
+
+    
+  </li>
+
+  
+  <li class="usa-sidenav__item is-current">
+    
+
+
+<a href="../text-input.html#text-input-package">Package</a>
+
+    
+  </li>
+
+</ul>
+    
+  
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../time-picker/index.html">
+  
+    Time picker
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../tooltip/index.html">
+  
+    Tooltip
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../v2.designsystem.digital.gov/components/typography/index.html">
+  
+    Typography
+  
+</a>
+
+
+    
+  </li>
+
+  
+
+  
+  <li class="usa-sidenav__item">
+    
+
+<a href="../validation.html">
+  
+    Validation
+  
+</a>
+
+
+    
+  </li>
+
+
+    </ul>
+    
+  </aside>
+
+  <main id="main-content" class="main-content">
+
+    <div class="styleguide-content usa-prose site-prose">
+      <header>
+        
+          
+            <p class="site-subheading">Components</p>
+          
+        
+        <h1 id="text-input" class="site-page-title">Text input</h1>
+      </header>
+
+      <p class="site-text-intro">A text input allows users to enter any combination of letters, numbers, or symbols. Text input boxes can span single or multiple lines.</p>
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<div class="usa-accordion usa-accordion--bordered site-accordion-code site-component-preview">
+  
+  
+  <button class="usa-accordion__button" aria-controls="text-input-preview-content" aria-expanded="true"><h2 id="text-input-preview">Component preview</h2></button>
+  <div id="text-input-preview-content" class="usa-accordion__content">
+
+    
+        <label class="usa-label" for="input-type-text">Text input label</label>
+<input class="usa-input" id="input-type-text" name="input-type-text" type="text">
+
+<label class="usa-label" for="input-focus">Text input focused</label>
+<input class="usa-input usa-focus" id="input-focus" name="input-focus" type="text">
+
+<div class="usa-form-group usa-form-group--error">
+  <label class="usa-label usa-label--error" for="input-error">Text input error</label>
+  <span class="usa-error-message" id="input-error-message">Helpful error message</span>
+  <input class="usa-input usa-input--error" id="input-error" name="input-error" type="text" aria-describedby="input-error-message">
+</div>
+
+<label class="usa-label" for="input-success">Text input success</label>
+<input class="usa-input usa-input--success" id="input-success" name="input-success" type="text">
+
+<label class="usa-label" for="input-type-textarea">Text area label</label>
+<textarea class="usa-textarea" id="input-type-textarea" name="input-type-textarea"></textarea>
+    
+  </div>
+</div>
+
+
+
+
+
+<div class="usa-accordion usa-accordion--bordered site-accordion-code">
+  
+  
+  <button class="usa-accordion__button" aria-controls="text-input-code-content"><h2 id="text-input-code">Component code</h2></button>
+  <div id="text-input-code-content" class="usa-accordion__content">
+    
+
+<div class="usa-sr-only">
+  
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;label class="usa-label" for="input-type-text"&gt;Text input label&lt;/label&gt;
+&lt;input class="usa-input" id="input-type-text" name="input-type-text" type="text"&gt;
+
+&lt;label class="usa-label" for="input-focus"&gt;Text input focused&lt;/label&gt;
+&lt;input class="usa-input usa-focus" id="input-focus" name="input-focus" type="text"&gt;
+
+&lt;div class="usa-form-group usa-form-group--error"&gt;
+  &lt;label class="usa-label usa-label--error" for="input-error"&gt;Text input error&lt;/label&gt;
+  &lt;span class="usa-error-message" id="input-error-message"&gt;Helpful error message&lt;/span&gt;
+  &lt;input class="usa-input usa-input--error" id="input-error" name="input-error" type="text" aria-describedby="input-error-message"&gt;
+&lt;/div&gt;
+
+&lt;label class="usa-label" for="input-success"&gt;Text input success&lt;/label&gt;
+&lt;input class="usa-input usa-input--success" id="input-success" name="input-success" type="text"&gt;
+
+&lt;label class="usa-label" for="input-type-textarea"&gt;Text area label&lt;/label&gt;
+&lt;textarea class="usa-textarea" id="input-type-textarea" name="input-type-textarea"&gt;&lt;/textarea&gt;</code></pre></figure>
+
+</div>
+<div aria-hidden="true">
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"usa-label"</span> <span class="na">for=</span><span class="s">"input-type-text"</span><span class="nt">&gt;</span>Text input label<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"usa-input"</span> <span class="na">id=</span><span class="s">"input-type-text"</span> <span class="na">name=</span><span class="s">"input-type-text"</span> <span class="na">type=</span><span class="s">"text"</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"usa-label"</span> <span class="na">for=</span><span class="s">"input-focus"</span><span class="nt">&gt;</span>Text input focused<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"usa-input usa-focus"</span> <span class="na">id=</span><span class="s">"input-focus"</span> <span class="na">name=</span><span class="s">"input-focus"</span> <span class="na">type=</span><span class="s">"text"</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"usa-form-group usa-form-group--error"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"usa-label usa-label--error"</span> <span class="na">for=</span><span class="s">"input-error"</span><span class="nt">&gt;</span>Text input error<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"usa-error-message"</span> <span class="na">id=</span><span class="s">"input-error-message"</span><span class="nt">&gt;</span>Helpful error message<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"usa-input usa-input--error"</span> <span class="na">id=</span><span class="s">"input-error"</span> <span class="na">name=</span><span class="s">"input-error"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">aria-describedby=</span><span class="s">"input-error-message"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"usa-label"</span> <span class="na">for=</span><span class="s">"input-success"</span><span class="nt">&gt;</span>Text input success<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"usa-input usa-input--success"</span> <span class="na">id=</span><span class="s">"input-success"</span> <span class="na">name=</span><span class="s">"input-success"</span> <span class="na">type=</span><span class="s">"text"</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"usa-label"</span> <span class="na">for=</span><span class="s">"input-type-textarea"</span><span class="nt">&gt;</span>Text area label<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;textarea</span> <span class="na">class=</span><span class="s">"usa-textarea"</span> <span class="na">id=</span><span class="s">"input-type-textarea"</span> <span class="na">name=</span><span class="s">"input-type-textarea"</span><span class="nt">&gt;&lt;/textarea&gt;</span></code></pre></figure>
+
+</div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="text-input-guidance" class="site-component-section-title">
+  Guidance
+</h2>
+<div class="site-component-usage">
+  
+  
+  
+    <h3 id="when-to-use-the-text-input">
+      When to use the text input component
+    </h3>
+    <ul class="usa-content-list">
+  <li><strong>Unpredictable or freeform responses.</strong> If you can’t reasonably predict a user’s answer to a prompt and there might be wide variability in users’ answers.</li>
+  <li><strong>Input simplicity.</strong> When using another type of input will make answering more difficult. For example, birthdays and other known dates are easier to type in than they are to select from a calendar picker.</li>
+  <li><strong>Pasted content.</strong> When users want to be able to paste in a response.</li>
+</ul>
+
+  
+  
+    <h3 id="when-to-consider-something-else-text-input">
+      When to consider something else
+    </h3>
+    <ul class="usa-content-list">
+  <li><strong>Predetermined input options.</strong> When users are choosing from a specific set of options.</li>
+</ul>
+
+  
+  
+    <h3 id="usability-guidance-text-input">Usability guidance</h3>
+    <ul class="usa-content-list">
+  <li><strong>Use fields appropriate to the length of the input.</strong> The length of the text input provides a hint to users as to how much text to write. Do not require users to write paragraphs of text into a single-line input box; use a text area instead.</li>
+  <li><strong>Consider the mobile context.</strong> Text inputs are among the easiest type of input for desktop users but are more difficult for mobile users.</li>
+  <li><strong>Wait to validate.</strong> Only show error validation messages or stylings after a user has interacted with a particular field.</li>
+  <li><strong>Avoid placeholder text.</strong> Avoid using placeholder text that appears within a text field before a user starts typing. If placeholder text is no longer visible after a user clicks into the field, users will no longer have that text available when they need to review their entries. (People who have cognitive or visual disabilities have additional problems with placeholder text.)
+.</li>
+</ul>
+
+  
+  
+    <h3  id="accessibility-text-input" class="usa-heading">
+      Accessibility
+    </h3>
+    <ul class="usa-content-list">
+  <li><strong>Customize form controls accessibly.</strong> If you customize this component, ensure that it continues to meet the <a href="../form.html">accessibility requirements that apply to all form controls</a>.</li>
+  <li><strong>Avoid placeholder text.</strong> Most browsers’ default rendering of placeholder text does not provide a high enough contrast ratio.</li>
+  <li><strong>Avoid splitting numbers.</strong> Avoid breaking numbers with distinct sections (such as phone numbers, Social Security Numbers, or credit card numbers) into separate input fields. For example, use one input for phone number, not three (one for area code, one for local code, and one for number). Each field needs to be labeled for a screen reader and the labels for fields broken into segments are often not meaningful.</li>
+</ul>
+
+  
+  
+    <h3  id="using-the-text-input-component" class="usa-heading">
+      Using the text input component
+    </h3>
+    
+    
+      <h4 id="component-settings-text-input">
+        Text input settings
+      </h4>
+      
+      
+
+
+
+
+
+
+
+  <p><em>This component has no settings.</em></p>
+
+
+      <h4 id="component-variants-text-input">
+        Text input variants
+      </h4>
+      
+
+
+  <table class="usa-table--borderless site-table-responsive site-table-simple margin-top-105">
+    <thead>
+      <tr>
+
+        <th scope="col" class="flex-1 display-inline-flex">Variant</th>
+
+        <th scope="col" class="flex-1 display-inline-flex">Description</th>
+      </tr>
+    </thead>
+    <tbody class="font-lang-3xs">
+      <tr>
+
+        <td class="flex-1 display-inline-flex flex-align-start"
+          data-title="Variant"
+          >
+          <p><code class="language-plaintext highlighter-rouge">usa-input--error</code></p>
+
+        </td>
+
+        <td class="flex-1 display-inline-flex flex-align-start"
+          data-title="Description"
+          >
+          <p>The error state of the text input.</p>
+
+        </td>
+      </tr>
+      <tr>
+
+        <td class="flex-1 display-inline-flex flex-align-start"
+          data-title="Variant"
+          >
+          <p><code class="language-plaintext highlighter-rouge">usa-input--success</code></p>
+
+        </td>
+
+        <td class="flex-1 display-inline-flex flex-align-start"
+          data-title="Description"
+          >
+          <p>The success state of the text input.</p>
+
+        </td>
+      </tr>
+      <tr>
+
+        <td class="flex-1 display-inline-flex flex-align-start"
+          data-title="Variant"
+          >
+          <p><code class="language-plaintext highlighter-rouge">usa-input--[width]</code></p>
+
+        </td>
+
+        <td class="flex-1 display-inline-flex flex-align-start"
+          data-title="Description"
+          >
+          <p>Displays an input at a specific width. Accepts <code class="language-plaintext highlighter-rouge">2xs</code> (4ex), <code class="language-plaintext highlighter-rouge">xs</code> (7ex), <code class="language-plaintext highlighter-rouge">sm</code> or <code class="language-plaintext highlighter-rouge">small</code> (10ex), <code class="language-plaintext highlighter-rouge">md</code> or <code class="language-plaintext highlighter-rouge">medium</code> (20ex), <code class="language-plaintext highlighter-rouge">lg</code> (30ex), <code class="language-plaintext highlighter-rouge">xl</code> (40ex), and <code class="language-plaintext highlighter-rouge">2xl</code> (50ex)</p>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+    
+  
+  
+  
+</div>
+
+
+
+
+
+
+<h2 id="text-input-package" class="site-component-section-title">Package</h2>
+<ul class="usa-content-list">
+  <li>
+    <strong>Package usage:</strong> <code>@import usa-form-controls</code>
+  </li>
+  <li>
+    <strong>Requires:</strong> <code>required</code>, <code>global</code></li>
+</ul>
+
+
+    </div>
+  </main>
+</div>
+
+
+<footer class="usa-footer site-footer" role="contentinfo">
+  <div class="usa-footer__secondary-section">
+    <div class="grid-container footer-content">
+      <h2>Become part of the community</h2>
+      <p>
+        USWDS is an active open source community of government engineers,
+        content specialists, and designers. Our contributors both in and out of
+        government support dozens of agencies and nearly 200 sites.
+      </p>
+      <div class="grid-row footer-contact-links">
+        <div class="tablet:grid-col">
+          <div class="usa-media-block">
+            <div class="usa-media-block__img circle-5 bg-accent-cool display-flex flex-row flex-align-center flex-justify-center text-white">
+              <svg class="usa-icon usa-icon--size-3" aria-hidden="true" role="img" focusable="false">
+                <use xlink:href="/assets/img/sprite.svg#help"></use>
+              </svg>
+            </div>
+            <div class="usa-media-block__body">
+              <h3>Running into an issue?</h3>
+              <a href="https://github.com/uswds/uswds/issues/new">
+                Ask questions on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="tablet:grid-col">
+          <div class="usa-media-block">
+            <img
+              class="usa-media-block__img"
+              src="img/home/icon-slack.svg"
+              alt=""
+              aria-hidden="true"
+            />
+            <div class="usa-media-block__body">
+              <h3>Engage with the community</h3>
+              <a href="https://chat.18f.gov/">
+                Join our Slack channel
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="tablet:grid-col">
+          <div class="usa-media-block">
+            <div class="usa-media-block__img circle-5 bg-accent-cool display-flex flex-row flex-align-center flex-justify-center text-white">
+              <svg class="usa-icon usa-icon--size-3" aria-hidden="true" role="img" focusable="false">
+                <use xlink:href="/assets/img/sprite.svg#mail"></use>
+              </svg>
+            </div>
+            <div class="usa-media-block__body">
+              <h3>Reach the team</h3>
+              <a href="mailto:uswds@support.digitalgov.gov">
+                Send us an email
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="tablet:grid-col">
+          <div class="usa-media-block">
+            <img
+              class="usa-media-block__img"
+              src="img/home/icon-twitter.svg"
+              alt=""
+              aria-hidden="true"
+            />
+            <div class="usa-media-block__body">
+              <h3>Stay updated</h3>
+              <a href="https://twitter.com/USWDS">
+                Follow us on Twitter
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-base-light padding-y-1 line-height-sans-3 font-lang-4">
+      <div class="grid-container">
+        Looking for USWDS v1 documentation?
+        <a
+          href="../v1.designsystem.digital.gov/index.html"
+          class="text-ink text-bold hover:text-no-underline"
+          >Visit v1.designsystem.digital.gov</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="usa-identifier">
+  <section class="usa-identifier__section usa-identifier__section--masthead" aria-label="Agency identifier">
+      <div class="usa-identifier__container">
+          <div class="usa-identifier__logos">
+              <a href="javascript:void(0);" class="usa-identifier__logo">
+                  <img class="usa-identifier__logo-img" src="img/gsa-logo.svg" alt="GSA logo" role="img">
+              </a>
+          </div>
+          <div class="usa-identifier__identity" aria-label="Agency description">
+              <p class="usa-identifier__identity-domain">designsystem.digital.gov</p>
+              <p class="usa-identifier__identity-disclaimer">
+                  An official website of the <a href="https://gsa.gov">General Services Administration</a>
+              </p>
+          </div>
+      </div>
+  </section>
+  <nav class="usa-identifier__section usa-identifier__section--required-links" aria-label="Important links">
+      <div class="usa-identifier__container">
+          <ul class="usa-identifier__required-links-list">
+              <li class="usa-identifier__required-links-item">
+                  <a href="https://www.gsa.gov/about-us" class="usa-identifier__required-link">
+                      About GSA
+                  </a>
+              </li>
+              <li class="usa-identifier__required-links-item">
+                  <a href="https://www.gsa.gov/website-information/accessibility-aids" class="usa-identifier__required-link">
+                      Accessibility support
+                  </a>
+              </li>
+              <li class="usa-identifier__required-links-item">
+                  <a href="https://www.gsa.gov/reference/freedom-of-information-act-foia" class="usa-identifier__required-link usa-link">
+                      FOIA requests
+                  </a>
+              </li>
+              <li class="usa-identifier__required-links-item">
+                  <a href="https://www.gsa.gov/reference/civil-rights-programs/notification-and-federal-employee-antidiscrimination-and-retaliation-act-of-2002" class="usa-identifier__required-link usa-link">
+                      No FEAR Act data
+                  </a>
+              </li>
+              <li class="usa-identifier__required-links-item">
+                  <a href="https://www.gsaig.gov/" class="usa-identifier__required-link usa-link">
+                      Office of the Inspector General
+                  </a>
+              </li>
+              <li class="usa-identifier__required-links-item">
+                  <a href="https://www.gsa.gov/reference/reports/budget-performance" class="usa-identifier__required-link usa-link">
+                      Performance reports
+                  </a>
+              </li>
+              <li class="usa-identifier__required-links-item">
+                  <a href="https://www.gsa.gov/website-information/website-policies" class="usa-identifier__required-link usa-link">
+                      Privacy policy
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </nav>
+  <section class="usa-identifier__section usa-identifier__section--usagov" aria-label="Government information and services">
+      <div class="usa-identifier__container">
+          <div class="usa-identifier__usagov-description">Looking for U.S. government information and services?</div>
+          <a href="https://www.usa.gov/" class="usa-link">Visit USA.gov</a>
+      </div>
+  </section>
+</div>
+
+
+
+    <script src="assets/js/styleguide.js"></script>
+
+<script src="assets/js/vendor/uswds.min.js"></script>
+<!--<script>
+//<![CDATA[
+      var usasearch_config = { siteHandle:"uswds" };
+
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = "//search.usa.gov/javascripts/remote.loader.js";
+      document.getElementsByTagName("head")[0].appendChild(script);
+
+//]]>
+</script>
+-->
+
+  </body>
+</html>
